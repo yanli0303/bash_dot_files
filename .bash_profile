@@ -21,7 +21,6 @@ shopt -s cdspell;
 
 # Load the shell dotfiles, and then some:
 for file in ~/.{alias,git,ls,npm,py}.bash; do
-  echo $file
-	[ -r "$file" ] && [ -f "$file" ] && source "$file";
+  [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
