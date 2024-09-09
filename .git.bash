@@ -64,8 +64,16 @@ gsa() {
 
 # merge remote branch to local, `gi` shorts for `git integrate`
 gm() {
+    # https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
+    local current_branch="$(git rev-parse --abbrev-ref HEAD)"
+    local branch=${1:-$current_branch}
+
+    echo git fetch -p origin
     git fetch -p origin
-    git merge --no-edit origin/$1
+
+    echo
+    echo git merge --no-edit "origin/$branch"
+    git merge --no-edit "origin/$branch"
 }
 
 # gib () {
