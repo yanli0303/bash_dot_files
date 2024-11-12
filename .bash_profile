@@ -16,6 +16,10 @@ HISTSIZE=32768
 # Ignore duplicate commands and commands starting with a space
 HISTCONTROL=ignoreboth
 
+# Enable history search with up and down arrows
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
+
 # Autocorrect typos in path names when using `cd`
 shopt -s cdspell;
 
